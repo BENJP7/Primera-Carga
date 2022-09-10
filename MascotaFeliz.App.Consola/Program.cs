@@ -32,7 +32,7 @@ namespace MascotaFeliz.App.Consola
 
         }
         
-          /* private static void AddDueno()
+           private static void AddDueno()
         {
             var dueno = new Dueno
             {
@@ -43,6 +43,18 @@ namespace MascotaFeliz.App.Consola
                 Correo = "Batman@gmail.com"
             };
             _repoDueno.AddDueno(dueno);
+        }
+         private static void BuscarDueno(int idDueno)
+        {
+          var dueno = _repoDueno.GetADueno(idDueno);
+          Console.WriteLine(dueno.Nombres + " "+ dueno.Apellidos + " "+ dueno.Direccion + " " + dueno.Telefono + " "); 
+
+        }
+          private static void BuscarVeterinario(int idVeterinario)
+        {
+          var veterinario = _repoVeterinario.GetAVeterinario(idVeterinario);
+          Console.WriteLine(veterinario.Nombres + " "+ dueno.Apellidos); 
+
         }
         
         
@@ -72,7 +84,7 @@ namespace MascotaFeliz.App.Consola
                
             };
             _repoHistoria.AddHistoria(historia);
-        }*/
+        }
             private static void AddMascota()
         {
             var mascota = new Mascota
