@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\joura\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\joura\\.nuget\\packages"
+    ]
+  }
+}
