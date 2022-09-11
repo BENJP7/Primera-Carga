@@ -1,4 +1,4 @@
-/*using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using MascotaFeliz.App.Dominio;
@@ -23,7 +23,7 @@ namespace MascotaFeliz.App.Persistencia
         {
             _appContext = appContext;
         }
-
+/*
         public  Historia AddHistoria(Historia historia)
         {
             var historiaAdicionado = _appContext.Historias.Add(historia);
@@ -31,7 +31,24 @@ namespace MascotaFeliz.App.Persistencia
             return historiaAdicionado.Entity;
 
         }
-      
+
+        public Historia UpdateHistoria(Historia historia)
+        {
+            var historiaEncontrado = _appContext.Historias.FirstOrDefault(d => d.Id == historia.Id);
+            if (historiaEncontrado != null)
+            {
+                historiaEncontrado.Id = historia.Id;
+                historiaEncontrado.FechaInicial = historia.FechaInicial;
+                historiaEncontrado.VisitasPyP = historia.VisitasPyP;
+               
+               
+                
+                _appContext.SaveChanges();
+            }
+            return historiaEncontrado;
+        }
+
+
         public void DeleteHistoria(int idHistoria)
         {
             var historiaEncontrado = _appContext.Historias.FirstOrDefault(d => d.Id == idHistoria);
@@ -46,12 +63,12 @@ namespace MascotaFeliz.App.Persistencia
             return GetAllHistorias_();
         }
         
-        public IEnumerable<Historia> GetHistoriasPorFiltro(DateTime filtro)
+        public IEnumerable<Historia> GetHistoriaPorFiltro(string filtro)
         {
             var historias = GetAllHistorias(); // Obtiene todos los saludos
             if (historias != null)  //Si se tienen saludos
             {
-                if (!DateTime.IsNullOrEmpty(filtro)) // Si el filtro tiene algun valor
+                if (!String.IsNullOrEmpty(filtro)) // Si el filtro tiene algun valor
                 {
                     historias = historias.Where(s => s.FechaInicial.Contains(filtro));
                 }
@@ -68,23 +85,8 @@ namespace MascotaFeliz.App.Persistencia
         {
             return _appContext.Historias.FirstOrDefault(d => d.Id == idHistoria);
         }
-        public Historia UpdateHistoria(Historia historia)
-        {
-            var historiaEncontrado = _appContext.Historias.FirstOrDefault(d => d.Id == historia.Id);
-            if (historiaEncontrado != null)
-            {
-                historiaEncontrado.Id = historia.Id;
-                historiaEncontrado.FechaInicial = historia.FechaInicial;
-                historiaEncontrado.VisitasPyP = historia.VisitasPyP;
-               
-               
-                
-                _appContext.SaveChanges();
-            }
-            return historiaEncontrado;
-        }
+*/        
     }
 
 }
-*/
 

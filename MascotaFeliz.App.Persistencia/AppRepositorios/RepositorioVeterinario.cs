@@ -50,7 +50,7 @@ namespace MascotaFeliz.App.Persistencia
             var veterinarios = GetAllVeterinarios(); // Obtiene todos los saludos
             if (veterinarios != null)  //Si se tienen saludos
             {
-                if (!String.IsNullOrEmpty(filtro)) // Si el filtro tiene algun valor
+                if (!string.IsNullOrEmpty(filtro)) // Si el filtro tiene algun valor
                 {
                     veterinarios = veterinarios.Where(s => s.Nombres.Contains(filtro));
                 }
@@ -67,6 +67,7 @@ namespace MascotaFeliz.App.Persistencia
         {
             return _appContext.Veterinarios.FirstOrDefault(d => d.Id == idVeterinario);
         }
+        
         public Veterinario UpdateVeterinario(Veterinario veterinario)
         {
             var veterinarioEncontrado = _appContext.Veterinarios.FirstOrDefault(d => d.Id == veterinario.Id);

@@ -1,4 +1,4 @@
-/*
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace MascotaFeliz.App.Persistencia
 {
-    public class RepositorioVeterinario : IRepositorioVeterinario
+    public class RepositorioVisitaPyP : IRepositorioVisitaPyP
     {
         /// <summary>
         /// Referencia al contexto de Dueno
@@ -19,72 +19,75 @@ namespace MascotaFeliz.App.Persistencia
         /// </summary>
         /// <param name="appContext"></param>//
         
-        public RepositorioVeterinario(AppContext appContext)
+        public RepositorioVisitaPyP(AppContext appContext)
         {
             _appContext = appContext;
         }
-
-        public  Veterinario AddVeterinario(Veterinario veterinario)
+/*
+        public  VisitaPyP AddVisitaPyP(VisitaPyP visita)
         {
-            var veterinarioAdicionado = _appContext.Veterinarios.Add(veterinario);
+            var vistaPypAdicionado = _appContext.VisitasPyP.Add(visita);
             _appContext.SaveChanges();
-            return veterinarioAdicionado.Entity;
+            return vistaPypAdicionado.Entity;
 
         }
       
-        public void DeleteVeterinario(int idVeterinario)
+        public void DeleteVisitaPyP(int idVisitaPyP)
         {
-            var veterinarioEncontrado = _appContext.Veterinarios.FirstOrDefault(d => d.Id == idVeterinario);
-            if (veterinarioEncontrado == null)
+            var visitPypEncontrado = _appContext.VisitasPyP.FirstOrDefault(d => d.Id == idVisitaPyP);
+            if (visitPypEncontrado == null)
                 return;
-            _appContext.Veterinarios.Remove(veterinarioEncontrado);
+            _appContext.VisitasPyP.Remove(visitPypEncontrado);
             _appContext.SaveChanges();
         }
 
-        public IEnumerable<Veterinario> GetAllVeterinarios()
+        public IEnumerable<VisitaPyP> GetAllVisitasPyPs()
         {
-            return GetAllVeterinarios_();
+            return GetAllVisitasPyPs_();
         }
 
-        public IEnumerable<Veterinario> GetVeterinariosPorFiltro(string filtro)
+        public IEnumerable<VisitaPyP> GetVisitasPyPPorFiltro(DateTime filtro!)
         {
-            var veterinarios = GetAllVeterinarios(); // Obtiene todos los saludos
-            if (veterinarios != null)  //Si se tienen saludos
+            var visitasPyP = GetAllVisitasPyPs(); // Obtiene todos los saludos
+            if (visitasPyP != null)  //Si se tienen saludos
             {
-                if (!String.IsNullOrEmpty(filtro)) // Si el filtro tiene algun valor
-                {
-                    veterinarios = veterinarios.Where(s => s.Nombres.Contains(filtro));
-                }
+                // if (!filtro.HasValue) // Si el filtro tiene algun valor
+                // {
+                    visitasPyP = visitasPyP.Where(s => s.FechaVisita.Contains(filtro));
+                // }
             }
-           return veterinarios;
+           return visitasPyP;
         }
 
-        public IEnumerable<Veterinario> GetAllVeterinarios_()
+        public IEnumerable<VisitaPyP> GetAllVisitasPyPs_()
         {
-            return _appContext.Veterinarios;
+            return _appContext.VisitasPyP;
         }
 
-        public Veterinario GetVeterinario(int idVeterinario)
+        public VisitaPyP GetVisitaPyP(int idVisitaPyP)
         {
-            return _appContext.Veterinarios.FirstOrDefault(d => d.Id == idVeterinario);
+            return _appContext.VisitasPyP.FirstOrDefault(d => d.Id == idVisitaPyP);
         }
-        public Veterinario UpdateVeterinario(Veterinario veterinario)
-        {
-            var veterinarioEncontrado = _appContext.Veterinarios.FirstOrDefault(d => d.Id == veterinario.Id);
-            if (veterinarioEncontrado != null)
-            {
-                veterinarioEncontrado.Nombres = veterinario.Nombres;
-                veterinarioEncontrado.Apellidos = veterinario.Apellidos;
-                veterinarioEncontrado.Direccion = veterinario.Direccion;
-                veterinarioEncontrado.Telefono = veterinario.Telefono;
-                veterinarioEncontrado.TarjetaProfesional = veterinario.TarjetaProfesional;
+
+
+        // public VisitaPyP UpdateVisitaPyP(Veterinario VisitaPyP)
+        // {
+        //     var visitaPyPEncontrado = _appContext.VisitasPyP.FirstOrDefault(d => d.Id == VisitaPyP.Id);
+        //     if (visitaPyPEncontrado != null)
+        //     {
+        //         visitaPyPEncontrado.Nombres = VisitaPyP.FechaVisita;
+        //         visitaPyPEncontrado.Apellidos = VisitaPyP.Apellidos;
+        //         visitaPyPEncontrado.Direccion = VisitaPyP.Direccion;
+        //         visitaPyPEncontrado.Telefono = VisitaPyP.Telefono;
+        //         visitaPyPEncontrado.TarjetaProfesional = VisitaPyP.TarjetaProfesional;
                
                 
-                _appContext.SaveChanges();
-            }
-            return veterinarioEncontrado;
-        }
-    }
-
-}
+        //         _appContext.SaveChanges();
+        //     }
+        //     return veterinarioEncontrado;
+        // }
 */
+    }
+}
+
+

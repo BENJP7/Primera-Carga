@@ -1,4 +1,4 @@
-/*
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -9,12 +9,11 @@ namespace MascotaFeliz.App.Persistencia
 {
     public interface IRepositorioVisitaPyP
     {
-        IEnumerable<VisitaPyP> GetAllVisitasPyPs();
-        VisitaPyP AddVisitaPyP(VisitaPyP visitaPyP);
-        VisitaPyP UpdateVisitaPyP(VisitaPyP visitaPyP);
-        void DeleteVisitaPyP(int idVisitaPyP);
-        VisitaPyP GetVisitaPyP(int idVisitaPyP);
-        IEnumerable<VisitaPyP> GetVisitasPyPPorFiltro(string filtro);
+        // IEnumerable<VisitaPyP> GetAllVisitasPyPs();
+        // VisitaPyP AddVisitaPyP(VisitaPyP visitaPyP);
+        // // VisitaPyP UpdateVisitaPyP(VisitaPyP visitaPyP);
+        // void DeleteVisitaPyP(int idVisitaPyP);
+        // VisitaPyP GetVisitaPyP(int idVisitaPyP);
+        // IEnumerable<VisitaPyP> GetVisitasPyPPorFiltro(DateTime filtro);
     }
 }
-*/
